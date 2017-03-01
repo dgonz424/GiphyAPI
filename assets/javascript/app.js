@@ -61,7 +61,7 @@
           var pOne = $("<p>").text("Rating: " + rating);
 
           // Displaying the rating
-          movieDiv.append(pOne);
+          characterDiv.append(pOne);
 
           // Storing the release year
           var released = response.Released;
@@ -70,7 +70,7 @@
           var pTwo = $("<p>").text("Released: " + released);
 
           // Displaying the release year
-          movieDiv.append(pTwo);
+          characterDiv.append(pTwo);
 
           // Storing the plot
           var plot = response.Plot;
@@ -79,7 +79,7 @@
           var pThree = $("<p>").text("Plot: " + plot);
 
           // Appending the plot
-          movieDiv.append(pThree);
+          characterDiv.append(pThree);
 
           // Retrieving the URL for the image
           var imgURL = response.Poster;
