@@ -25,22 +25,22 @@
           for (var i = 0; i < results.length; i++) {
 
             // Creating and storing a div tag
-            var animalDiv = $("<div>");
+            var characterDiv = $("<div>");
 
             // Creating a paragraph tag with the result item's rating
             var p = $("<p>").text("Rating: " + results[i].rating);
 
             // Creating and storing an image tag
-            var animalImage = $("<img>");
+            var characterImage = $("<img>");
             // Setting the src attribute of the image to a property pulled off the result item
-            animalImage.attr("src", results[i].images.fixed_height.url);
+            characterImage.attr("src", results[i].images.fixed_height.url);
 
             // Appending the paragraph and image tag to the animalDiv
-            animalDiv.append(p);
-            animalDiv.append(animalImage);
+            characterDiv.append(p);
+            characterDiv.append(characterImage);
 
             // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
-            $("#gifs-appear-here").prepend(animalDiv);
+            $("#gifs-appear-here").prepend(characterDiv);
           }
         });
     ;
@@ -58,28 +58,28 @@
           var rating = response.Rated;
 
           // Creating an element to have the rating displayed
-          var pOne = $("<p>").text("Rating: " + rating);
+          // var pOne = $("<p>").text("Rating: " + rating);
 
           // Displaying the rating
-          characterDiv.append(pOne);
+          // characterDiv.append(pOne);
 
           // Storing the release year
           var released = response.Released;
 
           // Creating an element to hold the release year
-          var pTwo = $("<p>").text("Released: " + released);
+          // var pTwo = $("<p>").text("Released: " + released);
 
           // Displaying the release year
-          characterDiv.append(pTwo);
+          // characterDiv.append(pTwo);
 
           // Storing the plot
           var plot = response.Plot;
 
           // Creating an element to hold the plot
-          var pThree = $("<p>").text("Plot: " + plot);
+          // var pThree = $("<p>").text("Plot: " + plot);
 
           // Appending the plot
-          characterDiv.append(pThree);
+          // characterDiv.append(pThree);
 
           // Retrieving the URL for the image
           var imgURL = response.Poster;
@@ -95,6 +95,8 @@
         });
 
       }
+
+
 
       // Function for displaying movie data
       function renderButtons() {
@@ -139,17 +141,18 @@
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
 
-    // $(".gif").on("click", function() {
-    //   // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-    //   var state = $(this).attr("data-state");
-    //   // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-    //   // Then, set the image's data-state to animate
-    //   // Else set src to the data-still value
-    //   if (state === "still") {
-    //     $(this).attr("src", $(this).attr("data-animate"));
-    //     $(this).attr("data-state", "animate");
-    //   } else {
-    //     $(this).attr("src", $(this).attr("data-still"));
-    //     $(this).attr("data-state", "still");
-    //   }
-    // });
+          $(".gif").on("click", function() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+
