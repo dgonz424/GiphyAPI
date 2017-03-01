@@ -5,7 +5,7 @@
   <head>
 
     <meta charset="UTF-8">
-    <title>Trivia Game</title>
+    <title>Giphy API</title>
 
     <!-- Our CSS style sheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -14,9 +14,33 @@
 
   <body>
 
-  <img src="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-still="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-animate="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
+   <div class="container">
+    <h1>Parks and Recreation Character Search</h1>
+
+    <!-- Rendered buttons will get dumped Here  -->
+    <div id="buttons-view"></div>
+
+    <form id="character-form">
+      <label for="character-input">Add a Parks and Recreation Character</label>
+      <input type="text" id="character-input"><br>
+
+      <!-- Button triggers new movie to be added -->
+      <input id="add-character" type="submit" value="Add a Character">
+    </form>
+
+    <!-- Movies will get dumped dere -->
+    <div id="characters-view"></div>
+
+<!--   <button data-character="Leslie Knope">Leslie Knope</button>
+  <button data-character="Ann Perkins">Ann Perkins</button>
+  <button data-character="Ron Swanson">Ron Swanson</button>
+  <button data-character="Tom Haverford">Tom Haverford</button> -->
+  <div id="gifs-appear-here">
+  </div>
+
+  <!-- <img src="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-still="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-animate="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
   <img src="http://media2.giphy.com/media/8rFQp4kHXJ0gU/200_s.gif" data-still="http://media2.giphy.com/media/8rFQp4kHXJ0gU/200_s.gif" data-animate="http://media2.giphy.com/media/8rFQp4kHXJ0gU/200.gif" data-state="still" class="gif">
-  <img src="http://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-still="http://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-animate="http://media3.giphy.com/media/W6LbnBigDe4ZG/200.gif" data-state="still" class="gif">
+  <img src="http://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-still="http://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-animate="http://media3.giphy.com/media/W6LbnBigDe4ZG/200.gif" data-state="still" class="gif"> -->
 
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
