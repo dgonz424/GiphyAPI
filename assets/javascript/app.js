@@ -1,6 +1,6 @@
     // Initial array of movies
       var characters = ["Leslie Knope", "Ron Swanson", "Tom Haverford", "Ann Perkins", "Andy Dwyer", "April Ludgate"];
-
+      
       // displayMovieInfo function re-renders the HTML to display the appropriate content
       function displayCharacterInfo() {
 
@@ -35,7 +35,7 @@
             // Setting the src attribute of the image to a property pulled off the result item
             characterImage.attr("src", results[i].images.fixed_height.url);
 
-            // Appending the paragraph and image tag to the animalDiv
+            // Appending the paragraph and image tag to the characterDiv
             characterDiv.append(p);
             characterDiv.append(characterImage);
 
@@ -45,7 +45,7 @@
         });
     ;
 
-        // Creating an AJAX call for the specific movie button being clicked
+        // Creating an AJAX call for the specific character button being clicked
         $.ajax({
           url: queryURL,
           method: "GET"
@@ -90,7 +90,7 @@
           // Appending the image
           characterDiv.append(image);
 
-          // Putting the entire movie above the previous movies
+          // Putting the entire character above the previous characters
           $("#characters-view").prepend(characterDiv);
         });
 
@@ -101,17 +101,17 @@
       // Function for displaying character data
       function renderButtons() {
 
-        // Deleting the movies prior to adding new movies
+        // Deleting the characters prior to adding new characters
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttons-view").empty();
 
-        // Looping through the array of movies
+        // Looping through the array of characters
         for (var i = 0; i < characters.length; i++) {
 
-          // Then dynamicaly generating buttons for each movie in the array
+          // Then dynamicaly generating buttons for each character in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
           var a = $("<button>");
-          // Adding a class of movie to our button
+          // Adding a class of character to our button
           a.addClass("character");
           // Adding a data-attribute
           a.attr("data-name", characters[i]);
@@ -122,20 +122,20 @@
         }
       }
 
-      // This function handles events where a movie button is clicked
+      // This function handles events where a character button is clicked
       $("#add-character").on("click", function(event) {
         event.preventDefault();
         // This line grabs the input from the textbox
         var character = $("#character-input").val().trim();
 
-        // Adding movie from the textbox to our array
+        // Adding character from the textbox to our array
         characters.push(character);
 
-        // Calling renderButtons which handles the processing of our movie array
+        // Calling renderButtons which handles the processing of our character array
         renderButtons();
       });
 
-      // Adding a click event listener to all elements with a class of "movie"
+      // Adding a click event listener to all elements with a class of "character"
       $(document).on("click", ".character", displayCharacterInfo);
 
       // Calling the renderButtons function to display the intial buttons
