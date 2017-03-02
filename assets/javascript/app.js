@@ -1,10 +1,10 @@
     // Initial array of movies
-      var characters = ["Leslie Knope", "Ann Perkins", "Ron Swanson", "Tom Haverford"];
+      var characters = ["Leslie Knope", "Ron Swanson", "Tom Haverford", "Ann Perkins", "Andy Dwyer", "April Ludgate"];
 
       // displayMovieInfo function re-renders the HTML to display the appropriate content
       function displayCharacterInfo() {
 
-        var character = $(this).attr("data-character");
+        var character = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         character + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -98,7 +98,7 @@
 
 
 
-      // Function for displaying movie data
+      // Function for displaying character data
       function renderButtons() {
 
         // Deleting the movies prior to adding new movies
@@ -141,7 +141,7 @@
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
 
-          $(".gif").on("click", function() {
+      $(".gif").on("click", function() {
       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
       var state = $(this).attr("data-state");
       // If the clicked image's state is still, update its src attribute to what its data-animate value is.
